@@ -23,8 +23,12 @@ body, h1, h2, p {
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  background-color: olive;
-  color: #333;
+  background-image: url('images/dario-bronnimann-hNQwIirOseE-unsplash.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  color: #fff;
   padding: 20px;
 }
 
@@ -43,7 +47,7 @@ header {
 header h1 {
   margin-bottom: 10px;
   text-align: center;
-  font-family: "Snell Roundhand", cursive;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 nav a {
