@@ -67,14 +67,15 @@ footer {
 
 .planets-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 20px;
-  margin-top: 20px;
+
 }
 
 .planet-image {
-  width: 150px;
-  height: 150px;
+  width: 160px;
+  height: 160px;
   border-radius: 15px;
   background-size: cover;
   background-position: center;
@@ -90,7 +91,7 @@ footer {
 
 .planet-image h3 {
   position: absolute;
-  bottom: 5px;
+  bottom: 8px;
   left: 50%;
   transform: translateX(-50%);
   color: #fff;
@@ -109,6 +110,26 @@ footer {
 
 #earth-card {
   background-image: url("images/09fb999ee6a82ce084578375df0903c6.jpg");
+}
+
+#mars-card {
+  background-image: url("images/mars-planet.jpg");
+}
+
+#jupiter-card {
+  background-image: url("images/Jupiter\,_image_taken_by_NASA\'s_Hubble_Space_Telescope\,_June_2019_-_Edited.jpg");
+}
+
+#saturn-card {
+  background-image: url("images/krasivye-planety-v-kosmose.jpg");
+}
+
+#uranus-card {
+  background-image: url("images/Planeta-Uran.jpg");
+}
+
+#neptune-card {
+  background-image: url("images/Planeta-Neptun.jpg");
 }
 
 .planet-info {

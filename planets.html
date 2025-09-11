@@ -18,20 +18,19 @@
   <main>
     <h2>Планеты солнечной системы</h2>
 
-    <!-- Контейнер с карточками -->
+    <!-- Левая колонка с карточками -->
     <div class="planets-container">
-      <div class="planet-image" id="mercury-card">
-        <h3>Меркурий</h3>
-      </div>
-      <div class="planet-image" id="venus-card">
-        <h3>Венера</h3>
-      </div>
-      <div class="planet-image" id="earth-card">
-        <h3>Земля</h3>
-      </div>
+      <div class="planet-image" id="mercury-card"><h3>Меркурий</h3></div>
+      <div class="planet-image" id="venus-card"><h3>Венера</h3></div>
+      <div class="planet-image" id="earth-card"><h3>Земля</h3></div>
+      <div class="planet-image" id="mars-card"><h3>Марс</h3></div>
+      <div class="planet-image" id="jupiter-card"><h3>Юпитер</h3></div>
+      <div class="planet-image" id="saturn-card"><h3>Сатурн</h3></div>
+      <div class="planet-image" id="uranus-card"><h3>Уран</h3></div>
+      <div class="planet-image" id="neptune-card"><h3>Нептун</h3></div>
     </div>
 
-    <!-- Выезжающие панели -->
+    <!-- Выезжающие панели справа -->
     <div class="planet-info" id="mercury-info">
       <button class="close-btn">&times;</button>
       <h3>Меркурий</h3>
@@ -49,6 +48,36 @@
       <h3>Земля</h3>
       <p>Наш дом — единственная известная планета с жизнью.</p>
     </div>
+
+    <div class="planet-info" id="mars-info">
+      <button class="close-btn">&times;</button>
+      <h3>Марс</h3>
+      <p>Красная планета, возможный кандидат для будущей колонизации.</p>
+    </div>
+
+    <div class="planet-info" id="jupiter-info">
+      <button class="close-btn">&times;</button>
+      <h3>Юпитер</h3>
+      <p>Самая большая планета Солнечной системы, газовый гигант.</p>
+    </div>
+
+    <div class="planet-info" id="saturn-info">
+      <button class="close-btn">&times;</button>
+      <h3>Сатурн</h3>
+      <p>Известен своими красивыми кольцами из льда и камней.</p>
+    </div>
+
+    <div class="planet-info" id="uranus-info">
+      <button class="close-btn">&times;</button>
+      <h3>Уран</h3>
+      <p>Планета-гигант, вращающаяся «на боку».</p>
+    </div>
+
+    <div class="planet-info" id="neptune-info">
+      <button class="close-btn">&times;</button>
+      <h3>Нептун</h3>
+      <p>Самая дальняя планета, с сильнейшими ветрами в системе.</p>
+    </div>
   </main>
 
   <footer>
@@ -56,7 +85,6 @@
   </footer>
 
   <script>
-    // Функция для настройки открытия/закрытия карточек
     function setupPlanet(cardId, infoId) {
       const card = document.getElementById(cardId);
       const info = document.getElementById(infoId);
@@ -66,10 +94,14 @@
       closeBtn.addEventListener('click', () => info.classList.remove('active'));
     }
 
-    // Подключаем каждую планету
-    setupPlanet('mercury-card', 'mercury-info');
-    setupPlanet('venus-card', 'venus-info');
-    setupPlanet('earth-card', 'earth-info');
+    // Подключаем все планеты
+    const planets = [
+      'mercury', 'venus', 'earth',
+      'mars', 'jupiter', 'saturn',
+      'uranus', 'neptune'
+    ];
+
+    planets.forEach(planet => setupPlanet(`${planet}-card`, `${planet}-info`));
   </script>
 </body>
 </html>
