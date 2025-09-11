@@ -17,24 +17,43 @@
 
   <main>
     <h2>Планеты солнечной системы</h2>
-    <div class="planet-card">
+    <div class="planets-container">
       <div class="planet-image" id="mercury-card">
-<h3>Меркурий</h3>
+        <h3>Меркурий</h3>
       </div>
+      <div class="planet-image" id="venus-card">
+        <h3>Венера</h3>
+      </div>
+      <div class="planet-image" id="earth-card">
+        <h3>Земля</h3>
+      </div>
+    </div>
     <div class="planet-info" id="mercury-info">
   <button class="close-btn">&times;</button>
   <h3>Меркурий</h3>
   <p>Самая близкая к Солнцу планета, очень горячая днём и холодная ночью</p>
     </div>
-  </main>
-    <article>
+
+    <div class="planet-card" id="venus-card">
+      <h3>Венера</h3>
+    </div>
+    <div class="planet-info" id="venus-info">
+      <button class="close-btn">&times;</button>
       <h3>Венера</h3>
       <p>Покрыта облаками серной кислоты, температура выше, чем у Меркурия.</p>
-    </article>
-    <article>
+    </div>
+    
+
+  
+    
+      <div class="planet-card" id="earth-card"></div>
       <h3>Земля</h3>
+  </div>
+  <div class="planet-info" id="earth-info">
+    <button class="close-btn">&times;</button>
+    <h3>Земля</h3>
       <p>Наш дом — единственная известная планета с жизнью.</p>
-    </article>
+  </div>
   </main>
   
   <footer>
@@ -52,6 +71,32 @@
   closeBtn.addEventListener('click', () => {
     mercuryInfo.classList.remove('active');
   });
+
+  const venusCard = document.getElementById('venus-card');
+const venusInfo = document.getElementById('venus-info');
+const venusCloseBtn = venusInfo.querySelector('.close-btn');
+
+venusCard.addEventListener('click', () => {
+  venusInfo.classList.add('active');
+});
+
+venusCloseBtn.addEventListener('click', () => {
+  venusInfo.classList.remove('active');
+});
+function setupPlanet(cardId, infoId) {
+  const card = document.getElementById(cardId);
+  const info = document.getElementById(infoId);
+  const closeBtn = info.querySelector('.close-btn');
+
+  card.addEventListener('click', () => info.classList.add('active'));
+  closeBtn.addEventListener('click', () => info.classList.remove('active'));
+}
+
+setupPlanet('mercury-card', 'mercury-info');
+setupPlanet('venus-card', 'venus-info');
+setupPlanet('earth-card', 'earth-info');
+
+
 </script>
 </body>
 </html>
