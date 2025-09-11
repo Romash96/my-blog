@@ -86,4 +86,71 @@ main p {
   text-align: center;
   font-size: 1.3em;
 }
+.planets-page {
+  margin: 0;
+  padding: 0;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #fff;
+  background: url("images/143257-kosmicheskoe_prostranstvo-kosmos-nauchnaya_fantaziya-art-fantasticheskoe_iskusstvo-2560x1440.jpg") no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+}
+.planet-card {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 20px;
+}
 
+.planet-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 15px;
+  background: url("images/1140x641.jpg") no-repeat center/cover;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.3s;
+}
+
+.planet-image:hover {
+  transform: scale(1.05);
+}
+
+/* Инфо-панель справа */
+.planet-info {
+  position: fixed;
+  top: 0;
+  right: -400px; /* прячем за экран */
+  width: 350px;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  color: #fff;
+  padding: 20px;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.5);
+  transition: right 0.4s ease;
+  overflow-y: auto;
+}
+
+.planet-info.active {
+  right: 0; /* показываем */
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+  float: right;
+}
+
+.planet-card h3 {
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 0 0 5px rgba(0,0,0,0.7);
+  margin: 0;
+}
