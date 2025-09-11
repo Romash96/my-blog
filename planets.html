@@ -3,20 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Планеты</title>
+  <title>Планеты - Солнечная система</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="planets-page">
-<header>
-  <h1>Солнечная система</h1>
+  <header>
+    <h1>Солнечная система</h1>
     <nav>
       <a href="index.html">Главная</a>
       <a href="planets.html">Планеты</a>
     </nav>
-</header>
+  </header>
 
   <main>
     <h2>Планеты солнечной системы</h2>
+
+    <!-- Контейнер с карточками -->
     <div class="planets-container">
       <div class="planet-image" id="mercury-card">
         <h3>Меркурий</h3>
@@ -28,75 +30,46 @@
         <h3>Земля</h3>
       </div>
     </div>
+
+    <!-- Выезжающие панели -->
     <div class="planet-info" id="mercury-info">
-  <button class="close-btn">&times;</button>
-  <h3>Меркурий</h3>
-  <p>Самая близкая к Солнцу планета, очень горячая днём и холодная ночью</p>
+      <button class="close-btn">&times;</button>
+      <h3>Меркурий</h3>
+      <p>Самая близкая к Солнцу планета, очень горячая днём и холодная ночью.</p>
     </div>
 
-    <div class="planet-card" id="venus-card">
-      <h3>Венера</h3>
-    </div>
     <div class="planet-info" id="venus-info">
       <button class="close-btn">&times;</button>
       <h3>Венера</h3>
       <p>Покрыта облаками серной кислоты, температура выше, чем у Меркурия.</p>
     </div>
-    
 
-  
-    
-      <div class="planet-card" id="earth-card"></div>
+    <div class="planet-info" id="earth-info">
+      <button class="close-btn">&times;</button>
       <h3>Земля</h3>
-  </div>
-  <div class="planet-info" id="earth-info">
-    <button class="close-btn">&times;</button>
-    <h3>Земля</h3>
       <p>Наш дом — единственная известная планета с жизнью.</p>
-  </div>
+    </div>
   </main>
-  
+
   <footer>
     <p>© 2025 Роман Шестаков</p>
   </footer>
+
   <script>
-  const mercuryCard = document.getElementById('mercury-card');
-  const mercuryInfo = document.getElementById('mercury-info');
-  const closeBtn = mercuryInfo.querySelector('.close-btn');
+    // Функция для настройки открытия/закрытия карточек
+    function setupPlanet(cardId, infoId) {
+      const card = document.getElementById(cardId);
+      const info = document.getElementById(infoId);
+      const closeBtn = info.querySelector('.close-btn');
 
-  mercuryCard.addEventListener('click', () => {
-    mercuryInfo.classList.add('active');
-  });
+      card.addEventListener('click', () => info.classList.add('active'));
+      closeBtn.addEventListener('click', () => info.classList.remove('active'));
+    }
 
-  closeBtn.addEventListener('click', () => {
-    mercuryInfo.classList.remove('active');
-  });
-
-  const venusCard = document.getElementById('venus-card');
-const venusInfo = document.getElementById('venus-info');
-const venusCloseBtn = venusInfo.querySelector('.close-btn');
-
-venusCard.addEventListener('click', () => {
-  venusInfo.classList.add('active');
-});
-
-venusCloseBtn.addEventListener('click', () => {
-  venusInfo.classList.remove('active');
-});
-function setupPlanet(cardId, infoId) {
-  const card = document.getElementById(cardId);
-  const info = document.getElementById(infoId);
-  const closeBtn = info.querySelector('.close-btn');
-
-  card.addEventListener('click', () => info.classList.add('active'));
-  closeBtn.addEventListener('click', () => info.classList.remove('active'));
-}
-
-setupPlanet('mercury-card', 'mercury-info');
-setupPlanet('venus-card', 'venus-info');
-setupPlanet('earth-card', 'earth-info');
-
-
-</script>
+    // Подключаем каждую планету
+    setupPlanet('mercury-card', 'mercury-info');
+    setupPlanet('venus-card', 'venus-info');
+    setupPlanet('earth-card', 'earth-info');
+  </script>
 </body>
 </html>
